@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "lint": "eslint src --quiet --cache --ext .tsx,.ts,.js,.jsx,.vue",
+    "preview": "vite preview",
+    "preinstall": "git config --local commit.template ./.gitmessage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
@@ -14,6 +17,8 @@
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-angular": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "@vitejs/plugin-vue": "^2.3.1",
@@ -30,5 +35,11 @@
     "vite": "^2.9.2",
     "vite-plugin-inspect": "^0.5.0",
     "vue-tsc": "^0.29.8"
+  },
+  "lint-staged": {
+    "src/*.{vue,js,jsx,ts,tsx}": [
+      "eslint src --quiet --cache --ext .vue,.js,.jsx,.ts,.tsx --fix",
+      "prettier --write"
+    ]
   }
 }
