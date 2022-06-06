@@ -9,11 +9,7 @@ module.exports = {
     'subject-full-stop': [2, 'never', '.'], // subject结尾不加'.'
     'type-case': [2, 'always', 'lowerCase'], // type小写
     'type-empty': [2, 'never'], // type不为空
-    'type-enum': [
-      2,
-      'always',
-      ['feat', 'fix', 'docs', 'refactor', 'style', 'test', 'perf', 'chore', 'ci'],
-    ],
+    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'refactor', 'style', 'test', 'perf', 'chore', 'ci']],
   },
-};
+}
 // ref https://conventional-changelog.github.io/commitlint/#/reference-rules

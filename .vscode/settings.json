@@ -1,6 +1,4 @@
 {
-    "cSpell.words": [
-        "unplugin"
-    ],
-    "typescript.tsdk": "node_modules/typescript/lib"
+  "cSpell.words": ["Pinia", "sider", "unplugin"],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

@@ -10,7 +10,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "components/*": ["src/components/*"],
+      "views/*": ["src/views/*"],
+      "utils/*": ["src/utils/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
