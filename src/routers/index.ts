@@ -11,9 +11,9 @@ const routes: RouteRecordRaw[] = [
   },
 ]
 
-export const routers = createRouter({ history: createWebHistory(), routes })
+export const router = createRouter({ history: createWebHistory(), routes })
 
-routers.beforeEach((to) => {
+router.beforeEach((to) => {
   if (to.path !== '/login') {
   }
 })

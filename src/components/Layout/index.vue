@@ -1,15 +1,15 @@
 <template>
-  <a-layout>
-    <a-layout-sider>
+  <ALayout class="layout">
+    <ALayoutSider>
       <LayoutSideBar />
-    </a-layout-sider>
-    <a-layout>
-      <a-layout-header>
+    </ALayoutSider>
+    <ALayout>
+      <ALayoutHeader>
         <LayoutHeader />
-      </a-layout-header>
-      <a-layout-content>Content</a-layout-content>
-    </a-layout>
-  </a-layout>
+      </ALayoutHeader>
+      <ALayoutContent>Content</ALayoutContent>
+    </ALayout>
+  </ALayout>
 </template>
 
 <script lang="ts" setup>
@@ -21,4 +21,8 @@ import { layoutStore } from './store'
 const store = layoutStore()
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.layout {
+  min-height: 100vh;
+}
+</style>

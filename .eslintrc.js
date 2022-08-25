@@ -7,6 +7,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
   },
   plugins: ['prettier', '@typescript-eslint'],
+  ignorePatterns: ['*.md'],
   rules: {
     // 缩进强制为 2 个空格，视情况开启
     // 在使用switch/case和三元运算多层嵌套时，eslint的检测规则和prettier规则会冲突 -- 宗纯

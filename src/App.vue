@@ -1,22 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <AConfigProvider v-bind="configProviderProps">
+    <RouterView />
+  </AConfigProvider>
 </template>
 
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
+import dayjs from 'dayjs'
+import 'dayjs/locale/zh-cn'
+dayjs.locale('cn')
 
-import HelloWorld from './components/HelloWorld.vue'
+const getPopupContainer = (triggerNode: HTMLElement) => triggerNode.parentNode ?? document.body
+
+const configProviderProps = { locale: zhCN, getPopupContainer }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+@import './styles/normalize.less';
+@import './styles/customize.less';
+@import './styles/var.less';
 </style>
