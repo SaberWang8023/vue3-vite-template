@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { NavRoutes } from '@/routers'
+import { NavRoutes } from '@/routers/router-table'
 import type { MenuProps } from 'ant-design-vue'
+import { ref } from 'vue'
 
 const selectedKeys = ref<string[]>([])
 const collapsed = ref(false)

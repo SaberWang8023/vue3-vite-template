@@ -7,15 +7,16 @@
       <ALayoutHeader>
         <LayoutHeader />
       </ALayoutHeader>
-      <ALayoutContent>Content</ALayoutContent>
+      <ALayoutContent>
+        <RouterView />
+      </ALayoutContent>
     </ALayout>
   </ALayout>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import LayoutSideBar from './LayoutSideBar.vue'
 import LayoutHeader from './LayoutHeader.vue'
+import LayoutSideBar from './LayoutSideBar.vue'
 import { layoutStore } from './store'
 
 const store = layoutStore()

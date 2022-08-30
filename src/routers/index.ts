@@ -1,21 +1,9 @@
-import { TestManagerRoutes } from 'views/TestManager/router'
-import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHistory } from 'vue-router'
+import { routes } from './router-table'
 
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    name: 'layout',
-    component: () => import('components/Layout/index.vue'),
-    children: [TestManagerRoutes],
-  },
-]
-
-export const router = createRouter({ history: createWebHistory(), routes })
+export const router = createRouter({ history: createWebHistory(import.meta.env.BASE_URL), routes })
 
 router.beforeEach((to) => {
   if (to.path !== '/login') {
   }
 })
-
-export const NavRoutes = routes[0].children

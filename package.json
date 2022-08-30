@@ -8,12 +8,14 @@
     "lint": "eslint src --quiet --cache --ext .tsx,.ts,.js,.jsx,.vue",
     "preview": "vite preview",
     "format-prettier": "prettier --write '**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue}'",
-    "preinstall": "git config --local commit.template ./.gitmessage",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky install"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.11",
+    "dayjs": "^1.11.5",
+    "lodash.curry": "^4.1.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
     "vite-plugin-pwa": "^0.12.3",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-angular": "^17.0.3",
+    "@types/lodash.curry": "^4.1.7",
     "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
     "@typescript-eslint/parser": "^5.35.1",

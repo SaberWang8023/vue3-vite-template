@@ -8,11 +8,12 @@
 import zhCN from 'ant-design-vue/es/locale/zh_CN'
 import dayjs from 'dayjs'
 import 'dayjs/locale/zh-cn'
+
 dayjs.locale('cn')
 
 const getPopupContainer = (triggerNode: HTMLElement) => triggerNode.parentNode ?? document.body
 
-const configProviderProps = { locale: zhCN, getPopupContainer }
+const configProviderProps = readonly({ locale: zhCN, getPopupContainer })
 </script>
 
 <style lang="less">
