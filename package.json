@@ -1,11 +1,12 @@
 {
-  "name": "my-vite-vue",
+  "name": "vue3-vite-template",
   "private": true,
   "version": "0.0.1",
   "scripts": {
     "dev": "vite --open",
     "build": "vue-tsc --noEmit && vite build",
     "lint": "eslint src --quiet --cache --ext .tsx,.ts,.js,.jsx,.vue",
+    "typecheck": "vue-tsc --noEmit",
     "preview": "vite preview",
     "format-prettier": "prettier --write '**/*.{css,gql,graphql,html,js,jsx,json,less,md,mdx,scss,ts,tsx,vue}'",
     "preinstall": "npx only-allow pnpm",
