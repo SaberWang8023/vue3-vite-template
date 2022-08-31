@@ -26,7 +26,6 @@ export default defineConfig({
       resolvers: [AntDesignVueResolver()],
       extensions: ['vue'],
       dts: 'types/components.d.ts',
-      dirs: ['src/components'],
       types: [
         {
           from: 'vue-router',

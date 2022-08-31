@@ -13,6 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ant-design-vue/pro-layout": "^3.2.3",
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.11",
     "dayjs": "^1.11.5",

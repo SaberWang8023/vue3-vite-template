@@ -1,6 +1,6 @@
 import NProgress from 'nprogress'
-import { type Plugin } from 'vue'
 import { type VuePluginOptions } from 'types'
+import { type Plugin } from 'vue'
 
 export const install: Plugin = (app, options: VuePluginOptions) => {
   const { router } = options

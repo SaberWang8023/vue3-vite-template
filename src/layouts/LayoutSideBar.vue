@@ -3,7 +3,7 @@
     <template v-for="nav in NavRoutes" :key="nav.name">
       <a-menu-item>
         <template v-if="nav.meta?.icon" #icon>
-          <components :is="nav.meta?.icon" />
+          <component :is="nav.meta?.icon" />
         </template>
         {{ nav.meta?.title }}
       </a-menu-item>

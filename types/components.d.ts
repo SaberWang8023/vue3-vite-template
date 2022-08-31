@@ -15,18 +15,8 @@ declare module '@vue/runtime-core' {
     ALayoutSider: typeof import('ant-design-vue/es')['LayoutSider']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
-    App: typeof import('./../src/App.vue')['default']
     CommonRouter: typeof import('./../src/components/CommonRouter/index.vue')['default']
-    DemoModule: typeof import('./../src/views/DemoModule/index.vue')['default']
-    Detail: typeof import('./../src/views/DemoModule/detail/index.vue')['default']
-    Layout: typeof import('./../src/Layout/index.vue')['default']
-    LayoutHeader: typeof import('./../src/layouts/LayoutHeader.vue')['default']
-    Layouts: typeof import('./../src/layouts/index.vue')['default']
-    LayoutSideBar: typeof import('./../src/layouts/LayoutSideBar.vue')['default']
-    List: typeof import('./../src/views/DemoModule/list/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TestManager: typeof import('./../src/views/TestManager/index.vue')['default']
-    Views: typeof import('./../src/views/index.vue')['default']
   }
 }

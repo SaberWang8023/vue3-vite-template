@@ -81,9 +81,11 @@
 
 ## TODOs:
 
+- [ ] 布局组件换为 pro-layout
 - [ ] 根据模块路由自动生成左侧的 nav 菜单
 - [ ] 路由集成权限判断
 - [ ] 通用的代码生成器
 - [ ] 校验 node 版本的工程化配置未集成
 - [ ] vitest 单元测试集成
 - [ ] lint-staged 配置更加精细化，集成 typecheck
+- [ ] 接入 yeoman

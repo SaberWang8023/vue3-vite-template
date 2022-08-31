@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@ant-design-vue/pro-layout': ^3.2.3
   '@ant-design/icons-vue': ^6.1.0
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-angular': ^17.0.3
@@ -34,6 +35,7 @@ specifiers:
   vue-tsc: ^0.40.1
 
 dependencies:
+  '@ant-design-vue/pro-layout': 3.2.3
   '@ant-design/icons-vue': 6.1.0_vue@3.2.37
   ant-design-vue: 3.2.11_vue@3.2.37
   dayjs: 1.11.5
@@ -76,6 +78,16 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.15
+
+  /@ant-design-vue/pro-layout/3.2.3:
+    resolution: {integrity: sha512-rXc5OPtuIkUqRuHdJ2+oMZJxMbn2S4qPGIhzKavQVnAcXt0TRvN9V6bZhFkR2EvXfkGl1woYgAEDv3F3o5V1Ww==}
+    dependencies:
+      '@ant-design/icons-vue': 6.1.0_vue@3.2.37
+      ant-design-vue: 3.2.11_vue@3.2.37
+      omit.js: 2.0.2
+      vue: 3.2.37
+      vue-router: 4.1.4_vue@3.2.37
+    dev: false
 
   /@ant-design/colors/6.0.0:
     resolution: {integrity: sha512-qAZRvPzfdWHtfameEGP2Qvuf838NhergR35o+EuVyB5XvSA98xod5r4utvi4TJ3ywmevm290g9nsCG5MryrdWQ==}
@@ -4058,6 +4070,10 @@ packages:
       define-properties: 1.1.4
       has-symbols: 1.0.3
       object-keys: 1.1.1
+    dev: false
+
+  /omit.js/2.0.2:
+    resolution: {integrity: sha512-hJmu9D+bNB40YpL9jYebQl4lsTW6yEHRTroJzNLqQJYHm7c+NQnJGfZmIWh8S3q3KoaxV1aLhV6B3+0N0/kyJg==}
     dev: false
 
   /once/1.4.0:

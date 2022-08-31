@@ -1,15 +1,16 @@
 <template>
-  <div class="header-container">
-    <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
-      <MenuUnfoldOutlined v-if="store.collapsed" />
-      <MenuFoldOutlined v-else />
-    </a-button>
-  </div>
+  <ALayoutHeader class="header-container">
+    <div>
+      <a-button type="link" style="margin-bottom: 16px; color: #ffffff" @click="toggleCollapsed">
+        <MenuUnfoldOutlined v-if="store.collapsed" />
+        <MenuFoldOutlined v-else />
+      </a-button>
+    </div>
+  </ALayoutHeader>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons-vue'
 import { layoutStore } from './store'
 
 const store = layoutStore()
@@ -20,9 +21,12 @@ const toggleCollapsed = () => {
 </script>
 
 <style lang="less" scoped>
+@import '@/styles/var.less';
 .header-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  padding: 0 8px;
+  height: 60px;
 }
 </style>

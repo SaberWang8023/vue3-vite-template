@@ -1,12 +1,10 @@
 <template>
   <ALayout class="layout">
-    <ALayoutSider>
+    <ALayoutSider v-model:collapsed="store.collapsed">
       <LayoutSideBar />
     </ALayoutSider>
     <ALayout>
-      <ALayoutHeader>
-        <LayoutHeader />
-      </ALayoutHeader>
+      <LayoutHeader />
       <ALayoutContent>
         <RouterView />
       </ALayoutContent>

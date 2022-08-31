@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import CommonRouter from '@/components/CommonRouter/index.vue'
+// import CommonRouter from '@/components/CommonRouter/index.vue';
 </script>
 
 <style lang="less" scoped></style>

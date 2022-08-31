@@ -1,5 +1,10 @@
 {
-  "cSpell.words": ["Pinia", "sider", "unplugin"],
+  "cSpell.words": [
+    "nuxt",
+    "Pinia",
+    "sider",
+    "unplugin"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,

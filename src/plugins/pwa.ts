@@ -1,5 +1,5 @@
-import { type Plugin } from 'vue'
 import { type VuePluginOptions } from 'types'
+import { type Plugin } from 'vue'
 
 // https://github.com/antfu/vite-plugin-pwa#automatic-reload-when-new-content-available
 export const install: Plugin = (app, options: VuePluginOptions) => {
