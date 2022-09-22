@@ -28,11 +28,13 @@ export const DemoModuleRoutes: Readonly<RouteRecordRaw> = {
       path: `list`,
       name: `${ROUTER_PREFIX}-list`,
       component: () => import('./list/index.vue'),
+      meta: { title: 'Demo列表' },
     },
     {
       path: `detail`,
       name: `${ROUTER_PREFIX}-detail`,
       component: () => import('./detail/index.vue'),
+      meta: { title: 'Demo详情' },
     },
   ],
 }
