@@ -1,3 +1,5 @@
+import { type RouteRecordRaw } from 'vue-router'
+
 /**
  * 绝对路由计算方法，用于redirect
  * @param routerPrefix 路由模块前缀
@@ -11,4 +13,14 @@ export const calculateAbsoluteRouter = (routerPrefix: string, routerPath: string
     return `${BASE_URL}${path}`
   }
   return path
+}
+
+/**
+ * 获取子路由的第一个默认路由
+ * @param routes RouteRecordRaw
+ */
+export const getDefaultRedirect = (routes: RouteRecordRaw[]) => {
+  const firstChildren = routes[0]
+  firstChildren.redirect = firstChildren.children?.[0].path
+  return routes
 }

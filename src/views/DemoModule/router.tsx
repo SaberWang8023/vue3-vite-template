@@ -1,5 +1,6 @@
 import { calculateAbsoluteRouter } from '@/routers/utils'
 import { AccountBookOutlined } from '@ant-design/icons-vue'
+import CommonRouter from 'components/CommonRouter/index.vue'
 import curry from 'lodash.curry'
 import type { RouteRecordRaw } from 'vue-router'
 import { ROUTER_PREFIX } from './constant'
