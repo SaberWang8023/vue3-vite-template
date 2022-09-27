@@ -9,7 +9,7 @@
     <a-menu
       v-model:selectedKeys="baseState.selectedKeys"
       v-model:openKeys="baseState.openKeys"
-      :inlineCollapsed="collapsed"
+      :inline-collapsed="collapsed"
       mode="inline"
       theme="dark"
     >
