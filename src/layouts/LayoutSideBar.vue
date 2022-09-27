@@ -2,8 +2,8 @@
   <a-layout-sider v-model:collapsed="store.collapsed">
     <div class="sidebar-logo">
       <span>
-        <img src="../assets/logo.png" alt="" />
-        <h1 v-if="!store.collapsed">Vue3 Template</h1>
+        <img class="logo" :class="store.collapsed && 'logo-collapsed'" src="../assets/logo.png" alt="" />
+        <h1 class="title" :class="store.collapsed && 'title-hide'">Vue3 Template</h1>
       </span>
     </div>
     <a-menu
@@ -57,8 +57,6 @@ watchEffect(() => {
   display: flex;
   align-items: center;
   padding: 16px 16px;
-  cursor: pointer;
-  transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   > span {
     display: flex;
@@ -67,14 +65,21 @@ watchEffect(() => {
     min-height: 32px;
   }
 
-  img {
+  .logo {
     display: inline-block;
     height: 32px;
     vertical-align: middle;
+    transition: height 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.3s;
+  }
+  .logo-collapsed {
+    height: 38px;
+    margin-left: 4px;
   }
 
-  h1 {
+  .title {
     display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
     height: 32px;
     margin: 0 0 0 12px;
     color: white;
@@ -83,8 +88,11 @@ watchEffect(() => {
     line-height: 32px;
     vertical-align: middle;
     animation: title-hide 0.3s;
-    // opacity: 1;
-    // transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .title-hide {
+    opacity: 0;
   }
 }
 

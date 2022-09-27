@@ -16,29 +16,35 @@ module.exports = {
     camelcase: 'off',
     'no-magic-numbers': 'off',
     'no-loop-func': 'off',
-
-    'vue/no-unused-vars': 'off',
-    'vue/max-attributes-per-line': 'off',
-    'vue/multi-word-component-names': 'off',
-    'vue/no-mutating-props': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/attribute-hyphenation': 'off',
-    'vue/v-on-event-hyphenation': 'off',
   },
   // 比如，如果同一个目录下的文件需要有不同的配置。因此，你可以在配置中使用 overrides 键
-  // overrides: [
-  //   {
-  //     files: ['*.vue', ],
-  //     extends: ['plugin:vue/vue3-recommended'],
-  //     rules: {
-  //       'vue/no-unused-vars': 'off',
-  //       'vue/max-attributes-per-line': 'off',
-  //       'vue/multi-word-component-names': 'off',
-  //       'vue/no-mutating-props': 'off',
-  //       'vue/singleline-html-element-content-newline': 'off',
-  //       'vue/attribute-hyphenation': 'off',
-  //       'vue/v-on-event-hyphenation': 'off',
-  //     },
-  //   },
-  // ],
+  overrides: [
+    {
+      files: ['*.vue'],
+      extends: ['plugin:vue/vue3-recommended'],
+      rules: {
+        // 'vue/no-unused-vars': 'off',
+        // 'vue/max-attributes-per-line': 'off',
+        'vue/multi-word-component-names': 'off',
+        // 'vue/no-mutating-props': 'off',
+        // 'vue/singleline-html-element-content-newline': 'off',
+        // 'vue/attribute-hyphenation': 'off',
+        // 'vue/v-on-event-hyphenation': 'off',
+        'vue/max-attributes-per-line': 'off',
+        // 使用自闭合标签
+        'vue/html-self-closing': [
+          'error',
+          {
+            html: {
+              void: 'always',
+              normal: 'always',
+              component: 'always',
+            },
+            svg: 'always',
+            math: 'always',
+          },
+        ],
+      },
+    },
+  ],
 }
