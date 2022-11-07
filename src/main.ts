@@ -1,5 +1,6 @@
 import { registerPlugin } from '@/plugins'
 import { router } from '@/routers'
+import 'virtual:svg-icons-register'
 import { createApp } from 'vue'
 import App from './App.vue'
 
