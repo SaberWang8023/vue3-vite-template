@@ -9,6 +9,7 @@ export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, root, 'BUILD_')
   // The boolean&decimal type read by loadEnv is a string. This function can be converted to boolean&decimal type
   const viteEnv = convertEnv(env)
+  const { BUILD_PORT, BUILD_DROP_CONSOLE } = viteEnv
 
   const isBuild = command === 'build'
   return {
@@ -35,7 +36,10 @@ export default defineConfig(({ command, mode }) => {
     },
     plugins: generateVitePlugins(viteEnv, isBuild),
     server: {
-      port: viteEnv.BUILD_PORT,
+      port: BUILD_PORT,
+    },
+    esbuild: {
+      drop: BUILD_DROP_CONSOLE ? ['console', 'debugger'] : undefined,
     },
   }
 })
