@@ -25,13 +25,14 @@ export function generateVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   process.env.REPORT === 'true' && vitePlugins.push(registerVisualizer())
 
   // vite-plugin-inspect
-  MODE !== 'prod' && vitePlugins.push(registerInspect())
+  MODE !== 'production' && vitePlugins.push(registerInspect())
+
+  // vite-plugin-pwa
+  BUILD_USE_PWA && vitePlugins.push(registerPwa(viteEnv))
 
   // The following plugins only work in the production environment
-  if (isBuild) {
-    // vite-plugin-pwa
-    BUILD_USE_PWA && vitePlugins.push(registerPwa(viteEnv))
-  }
+  // if (isBuild) {
+  // }
 
   return vitePlugins
 }

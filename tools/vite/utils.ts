@@ -1,5 +1,6 @@
 import { type ViteEnv } from '../../types/index'
-export const parseEnv = (env: Record<string, string>) => {
+
+export const convertEnv = (env: Record<string, string>) => {
   const result: Partial<ViteEnv> = {}
   Object.entries(env).forEach(([key, value]) => {
     let relVal: unknown = value.replace(/\\n/g, '\n')

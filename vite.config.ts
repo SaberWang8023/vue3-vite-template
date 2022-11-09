@@ -1,16 +1,14 @@
 import { resolve } from 'node:path'
-import { generateVitePlugins } from './tools/vite/plugins'
-
 import { defineConfig, loadEnv } from 'vite'
-import { parseEnv } from './tools/vite/utils'
+import { generateVitePlugins } from './tools/vite/plugins'
+import { convertEnv } from './tools/vite/utils'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const root = process.cwd()
-  const env = loadEnv(mode, root)
-  console.log(`(╯°Д°)╯︵ ┻━┻JSON`, env)
-  // The boolean type read by loadEnv is a string. This function can be converted to boolean type
-  const viteEnv = parseEnv(env)
+  const env = loadEnv(mode, root, 'BUILD_')
+  // The boolean&decimal type read by loadEnv is a string. This function can be converted to boolean&decimal type
+  const viteEnv = convertEnv(env)
 
   const isBuild = command === 'build'
   return {
