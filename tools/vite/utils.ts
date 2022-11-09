@@ -7,7 +7,7 @@ export const parseEnv = (env: Record<string, string>) => {
     if (typeof relVal === 'string') {
       if (['true', 'false'].includes(relVal)) {
         relVal = JSON.parse(relVal)
-      } else if (/([1-9]\d*\.?\d*)|(0\.\d*[1-9]/.test(relVal)) {
+      } else if (/^([1-9]\d*.?\d*)|(0.\d*[1-9])$/.test(relVal)) {
         relVal = parseFloat(relVal)
       }
     }
