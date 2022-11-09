@@ -34,5 +34,8 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     plugins: generateVitePlugins(viteEnv, isBuild),
+    server: {
+      port: viteEnv.BUILD_PORT,
+    },
   }
 })
