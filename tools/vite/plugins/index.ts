@@ -12,7 +12,7 @@ import { registerVisualizer } from './visualizer'
 export function generateVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
   const { BUILD_USE_PWA, MODE } = viteEnv
 
-  const vitePlugins: (PluginOption | PluginOption[])[] = [Vue(), VueJsx()]
+  const vitePlugins: PluginOption[] = [Vue(), VueJsx()]
 
   //  unplugin-vue-components/vite
   vitePlugins.push(registerComponents())
