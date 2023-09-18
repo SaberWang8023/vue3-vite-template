@@ -3,7 +3,9 @@
     "composite": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "types": ["@types/node"]
+    "types": ["@types/node"],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["tools/**/*.ts", "tools/**/*.d.ts", "vite.config.ts"]
+  "include": ["scripts/**/*.ts", "scripts/**/*.d.ts", "vite.config.ts", "package.json"]
 }

@@ -1,15 +1,10 @@
 import { defineComponent, inject, provide, type DefineComponent, type InjectionKey, type PropType, type VNode } from 'vue'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type ContextType = any
 
-export type CreateContext = DefineComponent<
-  undefined,
-  () => VNode | VNode[] | undefined,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  any
->
+export type CreateContext = DefineComponent<undefined, () => VNode | VNode[] | undefined, any>
 
+// eslint-disable-next-line symbol-description
 export const createContext = <T extends object>(contextInjectKey: InjectionKey<T> = Symbol(), injectCompName = 'Context.Provider') => {
   const ContextProvider = defineComponent({
     name: injectCompName,
@@ -28,6 +23,7 @@ export const createContext = <T extends object>(contextInjectKey: InjectionKey<T
   return ContextProvider
 }
 
+// eslint-disable-next-line symbol-description
 export const useContext = <T>(contextInjectKey: string | InjectionKey<T> = Symbol(), defaultValue?: T): T | undefined => {
   return inject<T>(contextInjectKey) ?? defaultValue
 }

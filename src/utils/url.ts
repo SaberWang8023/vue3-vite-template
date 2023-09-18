@@ -9,6 +9,7 @@ export class UrlParamsOperating {
   constructor() {
     this.params = new URLSearchParams(window.location.search.replace(/\?/gi, ''))
   }
+
   /**
    * 判断URL上是否含有参数
    * @param {string} name 参数名
@@ -16,6 +17,7 @@ export class UrlParamsOperating {
   has(name: string) {
     return this.params.has(name)
   }
+
   /**
    * 获取URL上参数值
    * @param {string} name 参数名

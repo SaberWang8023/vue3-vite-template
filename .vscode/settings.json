@@ -1,15 +1,7 @@
 {
-  "cSpell.words": [
-    "esbuild",
-    "nuxt",
-    "Pinia",
-    "sider",
-    "Siderbar",
-    "unplugin"
-  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": false
   },
   "editor.tabSize": 2,
   "[vue]": {

@@ -1,7 +1,7 @@
-import { STORE_KEYS } from '@/constant/store-keys'
+import { STORE_KEYS } from '@/constant/keys'
 import { defineStore } from 'pinia'
 
-export const layoutStore = defineStore(STORE_KEYS.LAYOUT, {
+export const useLayoutStore = defineStore(STORE_KEYS.LAYOUT, {
   state: () => {
     return {
       collapsed: false,

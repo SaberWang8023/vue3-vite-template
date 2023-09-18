@@ -3,8 +3,9 @@
     "baseUrl": ".",
     "module": "esnext",
     "target": "esnext",
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "strict": true,
+    "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "skipLibCheck": true,
@@ -13,7 +14,9 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "vite-plugin-pwa/client"],
+    "types": ["vue", "vite/client"],
+    "skipDefaultLibCheck": true,
+    "isolatedModules": true,
     "paths": {
       "@/*": ["src/*"],
       "components/*": ["src/components/*"],
@@ -23,6 +26,6 @@
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "types/**/*.d.ts"],
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "node_modules", "*.js", "*.cjs", "*.mjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

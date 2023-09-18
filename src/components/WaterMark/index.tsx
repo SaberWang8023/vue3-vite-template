@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { defineComponent, ref, watchEffect, type CSSProperties, type ExtractPropTypes, type PropType } from 'vue'
 
 export type FontStyle = 'none' | 'normal' | 'italic' | 'oblique'
@@ -133,7 +132,6 @@ const WaterMark = defineComponent({
           base64Url.value = canvas.toDataURL()
         }
       } else {
-        // eslint-disable-next-line no-console
         console.error('当前环境不支持Canvas')
       }
     })
@@ -144,8 +142,7 @@ const WaterMark = defineComponent({
           style={{
             position: 'relative',
             height: '100%',
-          }}
-        >
+          }}>
           {slots.default?.()}
           <div
             style={{

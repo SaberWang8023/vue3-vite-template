@@ -1,39 +1,12 @@
-<template>
-  <a-layout-sider v-model:collapsed="store.collapsed">
-    <div class="sidebar-logo">
-      <span>
-        <img class="logo" :class="store.collapsed && 'logo-collapsed'" src="../assets/logo.png" alt="" />
-        <h1 class="title" :class="store.collapsed && 'title-hide'">Vue3 Template</h1>
-      </span>
-    </div>
-    <a-menu
-      v-model:selectedKeys="baseState.selectedKeys"
-      v-model:openKeys="baseState.openKeys"
-      :inline-collapsed="collapsed"
-      mode="inline"
-      theme="dark"
-    >
-      <template v-for="nav in NavRoutes" :key="nav.path">
-        <a-menu-item>
-          <template v-if="nav.meta?.icon" #icon>
-            <component :is="nav.meta?.icon" />
-          </template>
-          <router-link :to="{ name: nav.name, path: nav.path }">
-            {{ nav.meta?.title }}
-          </router-link>
-        </a-menu-item>
-      </template>
-    </a-menu>
-  </a-layout-sider>
-</template>
-
 <script lang="ts" setup>
-import { NavRoutes } from '@/routers/router-table'
-import { MenuProps } from 'ant-design-vue'
+import { moduleRouters } from '@/routers/constant'
+import { type MenuProps } from 'ant-design-vue'
 import { ref } from 'vue'
-import { layoutStore } from './store'
+import { useLayoutStore } from './store'
 
-const store = layoutStore()
+defineOptions({ name: 'LayoutSideBar' })
+
+const store = useLayoutStore()
 const baseState = reactive<Pick<MenuProps, 'selectedKeys' | 'openKeys'>>({
   selectedKeys: [],
   openKeys: [],
@@ -50,6 +23,40 @@ watchEffect(() => {
   }
 })
 </script>
+
+<template>
+  <a-layout-sider v-model:collapsed="store.collapsed">
+    <div class="sidebar-logo">
+      <span>
+        <img
+          class="logo"
+          :class="store.collapsed && 'logo-collapsed'"
+          src="https://officetest-efficiency.tsign.cn/fe-efficiency/favicon.png"
+          alt=""
+        />
+        <h1 class="title" :class="store.collapsed && 'title-hide'">激励系统</h1>
+      </span>
+    </div>
+    <a-menu
+      v-model:selectedKeys="baseState.selectedKeys"
+      v-model:openKeys="baseState.openKeys"
+      :inlineCollapsed="collapsed"
+      mode="inline"
+      theme="dark"
+    >
+      <template v-for="nav in moduleRouters" :key="nav.path">
+        <a-menu-item>
+          <template v-if="nav.meta?.icon" #icon>
+            <component :is="nav.meta?.icon" />
+          </template>
+          <router-link :to="{ name: nav.name, path: nav.path }">
+            {{ nav.meta?.title }}
+          </router-link>
+        </a-menu-item>
+      </template>
+    </a-menu>
+  </a-layout-sider>
+</template>
 
 <style lang="less" scoped>
 .sidebar-logo {
@@ -69,7 +76,10 @@ watchEffect(() => {
     display: inline-block;
     height: 32px;
     vertical-align: middle;
-    transition: height 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), color 0.3s;
+    transition:
+      height 0.15s cubic-bezier(0.215, 0.61, 0.355, 1),
+      margin-left 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      color 0.3s;
   }
   .logo-collapsed {
     height: 38px;
